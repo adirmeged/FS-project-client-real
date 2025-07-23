@@ -1,7 +1,5 @@
 import type { Movie } from "../Type";
 import { v4 as uuidv4 } from "uuid";
-import InsideOutMain from "../DB/images/InsideOutMain.jpeg";
-import InsideOutSec from "../DB/images/InsideOutSec.jpg";
 
 export const defaultMovies: Movie[] = [
   {
@@ -12,20 +10,30 @@ export const defaultMovies: Movie[] = [
     publicationYear: " 2.4.2025 ",
     Image:[
       { imagerId:uuidv4(),
-  url: InsideOutMain,
+  url: "/images/InsideOutMain.jpeg",
   type: "main",},
   {
     imagerId:uuidv4(),
-  url: InsideOutSec,
-  type: "sec",
+  url: "/images/InsideOutSec.jpg",
+  type: "second ",
   }
     ]
   },
   {
     movieId: uuidv4(),
-    movieName: "meged",
+    movieName: "Mission Impossible",
     plot: "aaaaaaaaaaaaaaa",
     movieLength: "2",
     publicationYear: " 2.5.2025 ",
+     Image:[
+      { imagerId:uuidv4(),
+  url: "/images/MissionImpossibleMain.jpg",
+  type: "main",},
+  {
+    imagerId:uuidv4(),
+  url: "/images/MissionImpossibleSec.jpg",
+  type: "second ",
+  }
+    ]
   },
 ];

@@ -5,7 +5,7 @@ import Profil from "../../components/Profil";
 import { defaultUser } from "../../DB/DefaultUsers";
 import type { User } from "../../Type";
 
-function Menu() {
+const Menu = () => {
   const [filterValue, setFilterValue] = useState("");
   const [isSearchActive, setIsSearchActive] = useState(false);
   if (isSearchActive) {
