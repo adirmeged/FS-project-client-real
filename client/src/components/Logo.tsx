@@ -1,8 +1,6 @@
-
 const Logo = () => {
   return (
-        <img src={ImdbLogoImage} className=" h-8 " alt="IMDB Logo" />
-  
+        <img src={'/images/IMDB_Logo_2016.svg.png'} className=" h-8" alt="logo" />
   );
 };
 
