@@ -1,30 +1,28 @@
 import { useState } from "react";
 import SearchBar from "../../components/SearchBar";
 import Logo from "../../components/Logo";
-import Profil from "../../components/Profil";
-import { defaultUser } from "../../DB/DefaultUsers";
+import Profile from "../../components/Profile";
+import { defaultUser } from "../../DB/DefaultUser";
 import type { User } from "../../Type";
+import LogOut from "../../components/LogOut";
 
 const Menu = () => {
   const [filterValue, setFilterValue] = useState("");
-  const [isSearchActive, setIsSearchActive] = useState(false);
-  if (isSearchActive) {
-    console.log("do the filtring");
-    setIsSearchActive(false);
-  }
-  const x: User = defaultUser[1];
+  const searchFunction = () => {};
+  const user: User = defaultUser[1];
+
   return (
-    <div className=" flex justify-center p-8">
+    <div className="flex items-center justify-center p-8 gap-2">
       <Logo />
-      <div className="mr-8 ml-8">
+      <div className="md:mr-8 md:ml-8">
         <SearchBar
           filterValue={filterValue}
           setFilterValue={setFilterValue}
-          setIsSearchClicked={setIsSearchActive}
+          searchFunction={searchFunction}
         />
       </div>
-
-      <Profil user={x} />
+      <Profile user={user} />
+      <LogOut />
     </div>
   );
 };
