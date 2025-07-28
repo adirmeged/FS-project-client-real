@@ -4,9 +4,15 @@ export interface Movie {
   plot: string;
   movieLength: string;
   publicationYear: string;
+  Image? : Image[];
 }
 export interface User {
   userId: string;
   userName: string;
   email: string;
+}
+export interface Image {
+  imagerId: string;
+  url: string;
+  type: string;
 }
