@@ -36,4 +36,21 @@ export const defaultMovies: Movie[] = [
   }
     ]
   },
+  {
+    movieId: uuidv4(),
+    movieName: "free soli",
+    plot: "aaaaaaaaaaaaaaa",
+    movieLength: "2",
+    publicationYear: " 2.5.2025 ",
+     Image:[
+      { imagerId:uuidv4(),
+  url: "/images/freeSolimain.jpg",
+  type: "main",},
+  {
+    imagerId:uuidv4(),
+  url: "/images/freeSolisecond.jpg",
+  type: "second ",
+  }
+    ]
+  },
 ];

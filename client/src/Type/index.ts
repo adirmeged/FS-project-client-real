@@ -4,7 +4,7 @@ export interface Movie {
   plot: string;
   movieLength: string;
   publicationYear: string;
-  Image? : Image[];
+  Image : Image[];
 }
 export interface User {
   userId: string;
