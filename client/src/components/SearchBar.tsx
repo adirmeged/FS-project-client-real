@@ -12,9 +12,8 @@ const SearchBar = ({
   searchFunction,
 }: SearchBarProps) => {
   return (
-    <div className="relative md:w-lg flex items-center">
+    <div className="relative md:w-3xl ms:w-md flex items-center">
       <input
-        type="text"
         placeholder="Search"
         className="bg-custumGrayfilterBG h-10 px-5 pr-10 rounded-xl text-sm focus:outline-none w-full border border-black shadow-sm" 
         value={filterValue}
@@ -27,7 +26,6 @@ const SearchBar = ({
       />
 
       <button
-        type="button"
         className="absolute right-0 mr-4 focus:outline-none"
         onClick={() => {
           searchFunction();

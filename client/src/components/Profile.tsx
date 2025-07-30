@@ -8,7 +8,7 @@ const Profile = ({ user }: ProfilProps) => {
   return (
     <div className="flex items-center gap-2">
       <FaUserCircle className="size-8 fill-primaryWhite" />
-      <h1 className="text-primaryWhite">{user.userName}</h1>
+      <button className="text-primaryWhite">{user.userName}</button>
     </div>
   );
 };

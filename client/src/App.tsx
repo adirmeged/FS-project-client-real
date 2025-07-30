@@ -1,10 +1,9 @@
-import HomePageHero from "./pages/home/homePageHero";
-import Menu from "./pages/home/Menu";
+import Home from "./pages/home/home";
+
 function App() {
   return (
     <div>
-   <Menu/>
-   <HomePageHero/>
+   <Home/>
     </div>
   );
 }

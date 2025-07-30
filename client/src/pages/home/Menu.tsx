@@ -12,7 +12,7 @@ const Menu = () => {
   const user: User = defaultUser[1];
 
   return (
-    <div className="flex items-center justify-center p-8 gap-2">
+    <div className="flex items-center justify-center mt-4 mb-4 gap-2">
       <Logo />
       <div className="md:mr-8 md:ml-8">
         <SearchBar
