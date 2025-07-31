@@ -1,13 +1,13 @@
-import SearchOveraly from "../../components/SearchOveraly";
-import HomePageHero from "../../components/homePageHero";
-import Menu from "./Menu";
+import ListMovie from "../../components/ListMovie";
+import HomePage from "../../components/homePage";
+import Navbar from "./Navbar";
 
 const Home = () => {
   return (
     <div>
-      <Menu />
-      <HomePageHero />
-      <SearchOveraly />
+      <Navbar />
+      <HomePage />
+      <ListMovie />
     </div>
   );
 };

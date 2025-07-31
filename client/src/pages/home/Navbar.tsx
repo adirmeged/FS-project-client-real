@@ -6,7 +6,7 @@ import { defaultUser } from "../../DB/DefaultUser";
 import type { User } from "../../Type";
 import LogOut from "../../components/LogOut";
 
-const Menu = () => {
+const Navbar = () => {
   const [filterValue, setFilterValue] = useState("");
   const searchFunction = () => {};
   const user: User = defaultUser[1];
@@ -27,4 +27,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default Navbar;

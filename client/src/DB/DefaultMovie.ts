@@ -5,12 +5,16 @@ export const defaultMovie: Movie[] = [
   {
     movieId: uuidv4(),
     movieName: "Inside Out",
-    plot: "aaaaaaaaaaaaaaa",
+    plot: "Inside Out2 make us feel every emotion",
     movieLength: "2",
     publicationYear: " 2.4.2025 ",
-    rating:8,
+    rating: 8,
     Image: [
-      { imagerId: uuidv4(), url: "/images/InsideOutMain.jpeg", type: "main" },
+      {
+        imagerId: uuidv4(),
+        url: "/images/InsideOutMain.jpeg",
+        type: "main",
+      },
       {
         imagerId: uuidv4(),
         url: "/images/InsideOutSec.jpg",
@@ -24,8 +28,7 @@ export const defaultMovie: Movie[] = [
     plot: "aaaaaaaaaaaaaaa",
     movieLength: "2",
     publicationYear: " 2.5.2025 ",
-        rating:8,
-
+    rating: 8,
     Image: [
       {
         imagerId: uuidv4(),
@@ -43,12 +46,15 @@ export const defaultMovie: Movie[] = [
     movieId: uuidv4(),
     movieName: "free soli",
     plot: "aaaaaaaaaaaaaaa",
-        rating:8,
-
+    rating: 8,
     movieLength: "2",
     publicationYear: " 2.5.2025 ",
     Image: [
-      { imagerId: uuidv4(), url: "/images/freeSolimain.jpg", type: "main" },
+      {
+       imagerId: uuidv4(),
+       url: "/images/freeSolimain.jpg", 
+       type: "main"
+       },
       {
         imagerId: uuidv4(),
         url: "/images/freeSolisecond.jpg",
