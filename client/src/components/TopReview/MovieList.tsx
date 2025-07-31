@@ -1,18 +1,18 @@
-import type { Movie } from "../Type";
-import { defaultMovie } from "../DB/DefaultMovie";
+import type { Movie } from "../../Type";
+import { defaultMovie } from "../../DB/DefaultMovie";
 import MovieCrad from "./MovieCrad";
 import { useState } from "react";
-import ReviewsPopup from "./ReviewWindows";
-import Icons from "../icon";
+import ReviewsPopup from "../ReviewWindows";
+import Icons from "../../icon";
 
-const ListMovie = () => {
+const MovieList = () => {
   const movies: Movie[] = defaultMovie;
   const [isRateActive, setIsRateActive] = useState(false);
   const [rateMovie, setRateMovie] = useState(movies[0]);
 
   return (
-    <div className=" relative pb-15">
-      <div className="flex flex-wrap gap-3 items-center justify-center mr-190">
+    <div className=" relative pb-15 pt-15">
+      <div className="flex items-center md:justify-center md:mr-190 ms:w-xl ">
         <Icons.Point />
         <h1 className="text-xl">Top reviewed this week</h1>
       </div>
@@ -37,4 +37,4 @@ const ListMovie = () => {
   );
 };
 
-export default ListMovie;
+export default MovieList;

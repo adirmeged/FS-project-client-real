@@ -1,9 +1,14 @@
-import Home from "./pages/home/home";
+import MovieList from "./components/TopReview/MovieList";
+import Navbar from "./components/NavBar/Navbar";
+import HomePage from "./components/Featured/HomePage";
 
 function App() {
-  
   return (
-        <Home />
+    <div>
+      <Navbar />
+      <HomePage />
+      <MovieList />
+    </div>
   );
 }
 

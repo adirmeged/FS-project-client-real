@@ -1,4 +1,4 @@
-import Icons from "../icon";
+import Icons from "../../icon";
 
 interface SearchBarProps {
   filterValue: string;

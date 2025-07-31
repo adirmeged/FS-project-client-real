@@ -1,11 +1,10 @@
-import { defaultMovie } from "../DB/DefaultMovie";
-import type { Movie } from "../Type";
+import { defaultMovie } from "../../DB/DefaultMovie";
+import type { Movie } from "../../Type";
+import Icons from "../../icon";
 import MovieSideBarCard from "./MovieSideBarCard";
-import Icons from "../icon";
 
 const HomePage = () => {
   const movies: Movie[] = defaultMovie;
-  const numMovies = 3;
   return (
     <div className="h-150 bg-radial-[at_50%_75%] from-homePageBG via-black to-indigo-900 to-90% py-6">
       <div className="relative flex items-center justify-center mx-5">
@@ -27,8 +26,8 @@ const HomePage = () => {
             <Icons.Point />
             <h1>Featured Choices</h1>
           </div>
-          {[...Array(numMovies).keys()].map((i) => (
-            <MovieSideBarCard movie={movies[i]} key={i} />
+          {movies.map((movie) => (
+            <MovieSideBarCard movie={movie} />
           ))}
         </div>
       </div>

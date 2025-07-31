@@ -1,11 +1,10 @@
-import type { Movie } from "../Type";
+import type { Movie } from "../../Type";
 
 interface MovieSideBarProps {
   movie: Movie;
 }
 
 const MovieSideBarCard = ({ movie }: MovieSideBarProps) => {
-
   return (
     <div className="relative w-3xs h-30 mt-5 ml-3 cursor-pointer">
       <img

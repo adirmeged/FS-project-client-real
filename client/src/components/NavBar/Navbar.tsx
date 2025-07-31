@@ -1,10 +1,10 @@
 import { useState } from "react";
-import SearchBar from "../../components/SearchBar";
-import Logo from "../../components/Logo";
-import Profile from "../../components/Profile";
+import SearchBar from "./SearchBar";
+import Logo from "./Logo";
+import Profile from "./Profile";
 import { defaultUser } from "../../DB/DefaultUser";
 import type { User } from "../../Type";
-import LogOut from "../../components/LogOut";
+import LogOut from "./LogOut";
 
 const Navbar = () => {
   const [filterValue, setFilterValue] = useState("");

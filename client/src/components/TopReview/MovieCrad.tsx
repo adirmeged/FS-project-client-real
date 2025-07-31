@@ -1,5 +1,5 @@
-import Icons from "../icon";
-import type { Movie } from "../Type";
+import Icons from "../../icon";
+import type { Movie } from "../../Type";
 interface MovieCradProps {
   movie: Movie;
   setIsRateActive: (value: boolean) => void;
