@@ -3,7 +3,7 @@ import { defaultMovie } from "../../DB/DefaultMovie";
 import MovieCrad from "./MovieCrad";
 import { useState } from "react";
 import ReviewsPopup from "../ReviewWindows";
-import Icons from "../../icon";
+import Icons from "../Icons";
 
 const MovieList = () => {
   const movies: Movie[] = defaultMovie;

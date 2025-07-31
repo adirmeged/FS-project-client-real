@@ -1,4 +1,4 @@
-import Icons from "../../icon";
+import Icons from "../Icons";
 import type { User } from "../../Type";
 
 interface ProfilProps {

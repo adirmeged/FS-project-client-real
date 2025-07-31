@@ -1,6 +1,6 @@
 import { defaultMovie } from "../../DB/DefaultMovie";
 import type { Movie } from "../../Type";
-import Icons from "../../icon";
+import Icons from "../Icons";
 import MovieSideBarCard from "./MovieSideBarCard";
 
 const HomePage = () => {

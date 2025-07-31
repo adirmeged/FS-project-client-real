@@ -1,6 +1,6 @@
 import type { Movie } from "../Type";
 import { useState } from "react";
-import Icons from "../icon";
+import Icons from "./Icons";
 
 interface ReviewWindows {
   movie: Movie;
@@ -9,9 +9,9 @@ interface ReviewWindows {
 const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
   const [reviewText, setReviewText] = useState("");
   const fullStar: number = 3;
-  const maxLen: number = 500;
+  const MAX_LEN: number = 500;
   const emptyStar: number = 7;
-  
+
   return (
     <div className=" bg-custumGrayfilterBG w-lg h-95 rounded-xl text-primaryWhite text-lg">
       <div className="flex">
@@ -33,11 +33,11 @@ const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
         value={reviewText}
         placeholder="Review text"
         className="bg-custumGrayfilterBG px-3 py-3 h-50 rounded-xl text-lg w-full border border-black w-sm mx-15 mt-3 border-primaryGray"
-        maxLength={maxLen}
+        maxLength={MAX_LEN}
         onChange={(e) => setReviewText(e.target.value)}
       ></textarea>
       <div className="text-xs ml-100 text-primaryGray">
-        {reviewText.length}/500
+        {reviewText.length}/{MAX_LEN}
       </div>
       <button className="absolute bottom-5 right-15 bg-yellow-400 w-30 rounded-xl text-black text-xs p-2">
         Add Review +
