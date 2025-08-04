@@ -4,13 +4,16 @@ export interface Movie {
   plot: string;
   movieLength: string;
   publicationYear: string;
-  Image? : Image[];
+  Image : Image[];
+  rating:number ;
 }
+
 export interface User {
   userId: string;
   userName: string;
   email: string;
 }
+
 export interface Image {
   imagerId: string;
   url: string;
