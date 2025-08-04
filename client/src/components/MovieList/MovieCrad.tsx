@@ -1,5 +1,6 @@
 import type { Movie } from "../../Type";
 import Icons from "../Icons";
+import { useNavigate } from "react-router-dom";
 interface MovieCradProps {
   movie: Movie;
   setIsRateActive: (value: boolean) => void;
@@ -10,8 +11,9 @@ const MovieCrad = ({
   setIsRateActive,
   setRateMovie,
 }: MovieCradProps) => {
+const navigate=useNavigate();
   return (
-    <div className="relative w-4xs h-77 bg-custumGrayfilterBG mt-10 rounded-xl cursor-pointer">
+    <div className="relative w-4xs h-77 bg-custumGrayfilterBG mt-10 rounded-xl cursor-pointer" onClick={()=>navigate("/MoviePage")}>
       <img
         src={movie.Image[0].url}
         className="w-38 h-55 rounded-xl mx-auto mt-2"

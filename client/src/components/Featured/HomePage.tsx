@@ -6,8 +6,8 @@ import MovieSideBarCard from "./MovieSideBarCard";
 const HomePage = () => {
   const movies: Movie[] = defaultMovie;
   return (
-    <div className="h-150 bg-radial-[at_50%_75%] from-homePageBG via-black to-indigo-900 to-90% py-6">
-      <div className="relative flex items-center justify-center mx-5">
+    <div className="h-150 bg-radial-[at_50%_75%] from-homePageBG via-black to-indigo-900 to-90% py-6 flex justify-center ">
+      <div className="relative flex items-center w-5xl justify-start">
         <div className="relative">
           <img
             src={movies[0].Image[1].url}
@@ -23,7 +23,7 @@ const HomePage = () => {
         </div>
         <div className="px-10">
           <div className="flex items-center">
-            <Icons.Point />
+            <Icons.YellowPoint />
             <h1>Featured Choices</h1>
           </div>
           {movies.map((movie) => (

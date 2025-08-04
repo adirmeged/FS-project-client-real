@@ -1,13 +1,14 @@
 import HomePage from "../components/Featured/HomePage";
 import Navbar from "../components/NavBar/Navbar";
-import MovieList from "../components/TopReview/MovieList";
-
+import MovieList from "../components/MovieList/MovieList";
 const Home = () => {
   return (
     <div>
       <Navbar />
       <HomePage />
-      <MovieList />
+      <div className="flex justify-center">
+        <MovieList header="Top Review" numMovieShow={6} />
+      </div>
     </div>
   );
 };
