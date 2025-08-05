@@ -1,10 +1,12 @@
 import Icons from "../components/Icons";
-import MoviePresentation from "../components/MoviePage/MoviePresentation";
+import MoviePresentation from "../components/MoviePage/MainSection";
 import ReviewBubble from "../components/MoviePage/ReviewBubble";
 import Navbar from "../components/NavBar/Navbar";
 import MovieList from "../components/MovieList/MovieList";
 import type { Movie } from "../Type";
 import { useLocation } from "react-router-dom";
+
+
 
 const MoviePage = () => {
   const location = useLocation();
@@ -28,15 +30,19 @@ const MoviePage = () => {
       <div className="flex justify-center h-200 bg-linear-to-b from-homePageBG via-homePageBG">
         <div className="md:w-4xl sm:w-xl  text-primaryGray mt-4 ">
           <MoviePresentation movie={movie} />
+
           <hr id="Review" className="my-5" />
+
           <div className="flex text-primaryWhite text-xl items-center">
             <Icons.YellowPoint />
             {"User Reviews"}
           </div>
+
           <div className=" flex w-full gap-4 my-5">
-            <ReviewBubble movie={movie} />
-            <ReviewBubble movie={movie} />
+            <ReviewBubble review={movie.review[0]} />
+            <ReviewBubble review={movie.review[0]} />
           </div>
+
           <div id="MovieList">
             <MovieList header="More like this" numMovieShow={5} />
           </div>

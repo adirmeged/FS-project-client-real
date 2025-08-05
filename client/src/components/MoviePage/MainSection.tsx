@@ -14,19 +14,19 @@ const MoviePresentation = ({ movie }: MoviePresentationProps) => {
     <div>
       <h1 className="text-3xl text-primaryWhite">{movie.movieName}</h1>
       <div className="flex items-center gap-2 text-xs mt-3 ">
-        {movie.publicationYear.split(".")[2]}
+        {movie.publicationDate.split(".")[2]}
         <Icons.GrayPoint />
         {movie.movieLength}
       </div>
       <div className="flex justify-end gap-4 -mt-10">
         <div
-          className="bg-custumGrayfilterBG w-25 h-12 rounded-xl flex items-center justify-center gap-2 p-2 text-xs text-primaryWhite cursor-pointer"
+          className="bg-filterBG w-25 h-12 rounded-xl flex items-center justify-center gap-2 p-2 text-xs text-primaryWhite cursor-pointer"
           onClick={() => setIsRateActive(true)}
         >
           {<Icons.EmptyStar />} {"Rate"}
         </div>
 
-        <div className="bg-custumGrayfilterBG w-35 h-12 rounded-xl flex items-center justify-center gap-2 p-2 text-primaryWhite">
+        <div className="bg-filterBG w-35 h-12 rounded-xl flex items-center justify-center gap-2 p-2 text-primaryWhite">
           {<Icons.FullStar />} {movie.rating}
           <div className="text-primaryGray">{"/10"}</div>
           <div className="text-xs mt-2 text-primaryGray">
@@ -61,7 +61,7 @@ const MoviePresentation = ({ movie }: MoviePresentationProps) => {
         {isRateActive ? (
           <ReviewsPopup movie={movie} setIsRateActive={setIsRateActive} />
         ) : (
-          ""
+          <></>
         )}
       </div>
     </div>

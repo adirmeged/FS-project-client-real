@@ -13,7 +13,7 @@ const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
   const emptyStar: number = 7;
 
   return (
-    <div className=" bg-custumGrayfilterBG w-lg h-95 rounded-xl text-primaryWhite text-lg">
+    <div className=" bg-filterBG w-lg h-95 rounded-xl text-primaryWhite text-lg">
       <div className="flex">
         <div onClick={() => setIsRateActive(false)}>
           <Icons.Close />
@@ -32,7 +32,7 @@ const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
       <textarea
         value={reviewText}
         placeholder="Review text"
-        className="bg-custumGrayfilterBG px-3 py-3 h-50 rounded-xl text-lg w-full border border-black w-sm mx-15 mt-3 border-primaryGray"
+        className="bg-filterBG px-3 py-3 h-50 rounded-xl text-lg w-full border border-black w-sm mx-15 mt-3 border-primaryGray"
         maxLength={MAX_LEN}
         onChange={(e) => setReviewText(e.target.value)}
       ></textarea>

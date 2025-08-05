@@ -8,7 +8,7 @@ body,
   width: 100%;
 }
 @theme {
-  --color-custumGrayfilterBG: #1a1a1a;
+  --color-filterBG: #1a1a1a;
   --color-primaryGray: #797979;
   --color-primaryWhite: #c3c3c3;
   --color-homePageBG: #292539;

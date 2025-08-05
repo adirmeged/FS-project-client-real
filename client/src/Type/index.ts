@@ -3,7 +3,7 @@ export interface Movie {
   movieName: string;
   plot: string;
   movieLength: string;
-  publicationYear: string;
+  publicationDate: string;
   Image: Image[];
   rating: number;
   genre: string[];
@@ -25,7 +25,7 @@ export interface Image {
 export interface Review {
   Title: string;
   contect: string;
-  publicationYear: string;
+  publicationDate: string;
   userName: string;
   rating: number;
 }

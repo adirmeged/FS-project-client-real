@@ -13,7 +13,7 @@ const MovieCrad = ({
 }: MovieCradProps) => {
   const navigate = useNavigate();
   return (
-    <div className="relative w-4xs h-77 bg-custumGrayfilterBG mt-10 rounded-xl cursor-pointer">
+    <div className="relative w-4xs h-77 bg-filterBG mt-10 rounded-xl cursor-pointer">
       <img
         src={movie.Image[0].url}
         className="w-38 h-55 rounded-xl mx-auto mt-2"
