@@ -21,6 +21,7 @@ export interface Image {
   url: string;
   type: string;
 }
+
 export interface Review {
   Title: string;
   contect: string;

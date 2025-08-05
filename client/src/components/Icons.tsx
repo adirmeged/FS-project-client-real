@@ -26,7 +26,5 @@ const Icons = {
   Proflie: () => {
     return <FaUserCircle className="size-8 fill-primaryWhite" />;
   },
-  
 };
 export default Icons;
-

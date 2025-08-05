@@ -10,19 +10,23 @@ const MoviePage = () => {
   const location = useLocation();
   const movie: Movie = location.state.movie;
   window.scrollTo(0, 0);
-  
-  const scroll = (x: string) => {
-    const targetElement = document.getElementById(x);
+
+  const scroll = (target: string) => {
+    const targetElement = document.getElementById(target);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+      if (target == "top") {
+        window.scrollTo(0, 0);
+      } else {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
+  
   return (
-    <div id="top">
+    <div id="top"  >
       <Navbar />
       <div className="flex justify-center h-200 bg-linear-to-b from-homePageBG via-homePageBG">
-        
-        <div className="md:w-4xl sm:w-xl text-primaryGray ">
+        <div className="md:w-4xl sm:w-xl  text-primaryGray mt-4 ">
           <MoviePresentation movie={movie} />
           <hr id="Review" className="my-5" />
           <div className="flex text-primaryWhite text-xl items-center">
@@ -58,7 +62,6 @@ const MoviePage = () => {
             More like this
           </li>
         </ul>
-
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ import MovieSideBarCard from "./MovieSideBarCard";
 
 const HomePage = () => {
   const navigate = useNavigate();
-
   const movies: Movie[] = defaultMovie;
+
   return (
     <div className="h-150 py-6 flex justify-center ">
       <div className="relative flex items-center w-5xl justify-start">
