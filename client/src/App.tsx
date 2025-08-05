@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home/>  } />
-      <Route path="/MoviePage" element={<MoviePage movie={defaultMovie[0]} />} />
+      <Route path="/MoviePage " element={<MoviePage movie={defaultMovie[0]} />} />
     </Routes>
   );
 }

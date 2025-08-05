@@ -9,7 +9,7 @@ interface MoviePageProps {
 }
 const MoviePage = ({ movie }: MoviePageProps) => {
   return (
-    <div>
+    <div >
       <Navbar />
       <div className="flex justify-center ">
         <div className="md:w-4xl sm:w-xl text-primaryGray">

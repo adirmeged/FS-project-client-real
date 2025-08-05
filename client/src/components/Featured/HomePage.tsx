@@ -6,7 +6,7 @@ import MovieSideBarCard from "./MovieSideBarCard";
 const HomePage = () => {
   const movies: Movie[] = defaultMovie;
   return (
-    <div className="h-150 bg-radial-[at_50%_75%] from-homePageBG via-black to-indigo-900 to-90% py-6 flex justify-center ">
+    <div className="h-150 py-6 flex justify-center bg-linear-to-b from-homePageBG via-homePageBG">
       <div className="relative flex items-center w-5xl justify-start">
         <div className="relative">
           <img

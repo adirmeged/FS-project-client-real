@@ -28,7 +28,7 @@ const Icons = {
     return <FaUserCircle className="size-8 fill-primaryWhite" />;
   },
   Dash: () => {
-    return <TfiLayoutLineSolid className="fill-white w-full h-5 " />;
+    return <TfiLayoutLineSolid className="fill-white w-200 h-5 " />;
   },
 };
 export default Icons;
