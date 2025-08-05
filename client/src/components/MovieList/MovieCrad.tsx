@@ -11,12 +11,15 @@ const MovieCrad = ({
   setIsRateActive,
   setRateMovie,
 }: MovieCradProps) => {
-const navigate=useNavigate();
+  const navigate = useNavigate();
   return (
-    <div className="relative w-4xs h-77 bg-custumGrayfilterBG mt-10 rounded-xl cursor-pointer" onClick={()=>navigate("/MoviePage")}>
+    <div className="relative w-4xs h-77 bg-custumGrayfilterBG mt-10 rounded-xl cursor-pointer">
       <img
         src={movie.Image[0].url}
         className="w-38 h-55 rounded-xl mx-auto mt-2"
+        onClick={() => {
+          navigate("/MoviePage", { state: { movie: movie } });
+        }}
       />
       <div className="mx-2 mt-1 text-lg"> {movie.movieName} </div>
       <div className="flex mt-2 items-center space-x-11 mx-2">

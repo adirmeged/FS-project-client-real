@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <HomePage />
+      <div className="h-200 bg-linear-to-b from-homePageBG via-homePageBG">
+        <HomePage />
+      </div>
       <div className="flex justify-center">
         <MovieList header="Top Review" numMovieShow={6} />
       </div>

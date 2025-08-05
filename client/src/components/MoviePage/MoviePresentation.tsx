@@ -31,19 +31,19 @@ const MoviePresentation = ({ movie }: MoviePresentationProps) => {
         </div>
       </div>
       <div className="flex gap-6 mt-4">
-        <img src={movie.Image[0].url} className=" w-xs h-80 rounded-md " />
+        <img src={movie.Image[0].url} className=" w-xs h-80 rounded-md"/>
         <img
           src={movie.Image[1].url}
-          className=" w-2xl h-80 rounded-md brightness-65 "
+          className=" w-2xl h-80 rounded-md brightness-65"
         />
       </div>
-      <div className="flex items-center gap-2 mt-4 ">
+      <div className="flex items-center gap-2 mt-4">
         <div className="text-md mr-10">{"Genre"}</div>
         {movie.genre.map((i) => (
           <GenreBubble genre={i} key={i} />
         ))}
       </div>
-      <div className="flex items-center gap-2 mt-4 ">
+      <div className="flex items-center gap-2 mt-4">
         <div className="text-md mr-15">{"Plot"}</div>
         <div className="text-xs text-primaryWhite"> {movie.plot}</div>
       </div>

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Movie } from "../../Type";
 
 interface MovieSideBarProps {
@@ -5,8 +6,15 @@ interface MovieSideBarProps {
 }
 
 const MovieSideBarCard = ({ movie }: MovieSideBarProps) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="relative w-3xs h-30 mt-5 ml-3 cursor-pointer">
+    <div
+      className="relative w-3xs h-30 mt-5 ml-3 cursor-pointer"
+      onClick={() => {
+        navigate("/MoviePage", { state: { movie: movie } });
+      }}
+    >
       <img
         src={movie.Image[1].url}
         className="w-full h-full rounded-xl brightness-35"

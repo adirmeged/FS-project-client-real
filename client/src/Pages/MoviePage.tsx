@@ -4,17 +4,27 @@ import ReviewBubble from "../components/MoviePage/ReviewBubble";
 import Navbar from "../components/NavBar/Navbar";
 import MovieList from "../components/MovieList/MovieList";
 import type { Movie } from "../Type";
-interface MoviePageProps {
-  movie: Movie;
-}
-const MoviePage = ({ movie }: MoviePageProps) => {
+import { useLocation } from "react-router-dom";
+
+const MoviePage = () => {
+  const location = useLocation();
+  const movie: Movie = location.state.movie;
+  window.scrollTo(0, 0);
+  
+  const scroll = (x: string) => {
+    const targetElement = document.getElementById(x);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <div >
+    <div id="top">
       <Navbar />
-      <div className="flex justify-center ">
-        <div className="md:w-4xl sm:w-xl text-primaryGray">
+      <div className="flex justify-center h-200 bg-linear-to-b from-homePageBG via-homePageBG">
+        
+        <div className="md:w-4xl sm:w-xl text-primaryGray ">
           <MoviePresentation movie={movie} />
-          <Icons.Dash />
+          <hr id="Review" className="my-5" />
           <div className="flex text-primaryWhite text-xl items-center">
             <Icons.YellowPoint />
             {"User Reviews"}
@@ -23,13 +33,32 @@ const MoviePage = ({ movie }: MoviePageProps) => {
             <ReviewBubble movie={movie} />
             <ReviewBubble movie={movie} />
           </div>
-          <MovieList header="More like this" numMovieShow={5} />
+          <div id="MovieList">
+            <MovieList header="More like this" numMovieShow={5} />
+          </div>
         </div>
-        <div className="ml-10 ">
-          <section>Overview</section>
-          <section> user reviews</section>
-          <section>Overview</section>
-        </div>
+
+        <ul className="ml-10">
+          <li
+            onClick={() => scroll("top")}
+            className="cursor-pointer mt-10 h hover:text-yellow-300"
+          >
+            Overiew
+          </li>
+          <li
+            onClick={() => scroll("Review")}
+            className="cursor-pointer mt-3 mb-3 hover:text-yellow-300"
+          >
+            User reviews
+          </li>
+          <li
+            onClick={() => scroll("MovieList")}
+            className="cursor-pointer hover:text-yellow-300"
+          >
+            More like this
+          </li>
+        </ul>
+
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const MovieList = ({ header, numMovieShow }: MovieListProps) => {
   const [rateMovie, setRateMovie] = useState(movies[0]);
 
   return (
-    <div className=" relative pb-15 pt-15 flex justify-center">
+    <div className=" relative pb-15 flex justify-center">
       <div className="w-full">
         <div className="flex items-center justify-start  xl:w-full  justify-center mx-auto">
           <Icons.YellowPoint />

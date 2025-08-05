@@ -2,7 +2,6 @@ import { CiStar } from "react-icons/ci";
 import { FaSearch, FaStar, FaUserCircle } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { TbPointFilled } from "react-icons/tb";
-import { TfiLayoutLineSolid } from "react-icons/tfi";
 
 const Icons = {
   EmptyStar: () => {
@@ -27,9 +26,7 @@ const Icons = {
   Proflie: () => {
     return <FaUserCircle className="size-8 fill-primaryWhite" />;
   },
-  Dash: () => {
-    return <TfiLayoutLineSolid className="fill-white w-200 h-5 " />;
-  },
+  
 };
 export default Icons;
 
