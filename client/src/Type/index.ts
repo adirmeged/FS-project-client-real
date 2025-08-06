@@ -3,9 +3,11 @@ export interface Movie {
   movieName: string;
   plot: string;
   movieLength: string;
-  publicationYear: string;
-  Image : Image[];
-  rating:number ;
+  publicationDate: string;
+  Image: Image[];
+  rating: number;
+  genre: string[];
+  review: Review[];
 }
 
 export interface User {
@@ -18,4 +20,12 @@ export interface Image {
   imagerId: string;
   url: string;
   type: string;
+}
+
+export interface Review {
+  Title: string;
+  contect: string;
+  publicationDate: string;
+  userName: string;
+  rating: number;
 }

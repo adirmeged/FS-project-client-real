@@ -10,8 +10,11 @@ const Icons = {
   FullStar: () => {
     return <FaStar className=" size-5 fill-yellow-400" />;
   },
-  Point: () => {
+  YellowPoint: () => {
     return <TbPointFilled className="fill-yellow-300" />;
+  },
+  GrayPoint: () => {
+    return <TbPointFilled className="fill-baseText size-2" />;
   },
 
   Search: () => {
@@ -21,7 +24,7 @@ const Icons = {
     return <IoClose className="ml-5 mt-5" />;
   },
   Proflie: () => {
-    return <FaUserCircle className="size-8 fill-primaryWhite" />;
+    return <FaUserCircle className="size-8 fill-baseText" />;
   },
 };
 export default Icons;
