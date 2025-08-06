@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <div className="bg-linear-to-b from-baseBG via-baseBG">
       <div className="mx-30">
-        <div className="h-[109vh] py-6 flex">
-          <div className="relative flex  w-[80vw] h-[80vh] justify-start">
+        <div className="flex py-5 h-[110vh] ">
+          <div className="relative flex">
             <div className="relative">
               <img
                 src={movies[0].Image[1].url}
@@ -29,11 +29,11 @@ const Home = () => {
                   navigate("/MoviePage", { state: { movie: movies[0] } });
                 }}
               />
-              <div className=" absolute rounded-xl top-[80vh] left-[20vw] text-3xl w-[25vw]  ">
+              <div className="absolute rounded-xl top-[80vh] left-[20vw] text-3xl w-[25vw]">
                 {movies[0].plot}
               </div>
             </div>
-            <div className="relative px-10 py-5 ">
+            <div className="px-10 py-5 ">
               <div className="flex items-center ">
                 <Icons.YellowPoint />
                 <h1>Featured Choices</h1>
@@ -42,9 +42,9 @@ const Home = () => {
                 <MovieSideBarCard movie={movie} />
               ))}
             </div>
-          </div>
+          </div>      
         </div>
-        <div className="flex justify-start w-[80vw] ">
+        <div className="flex justify-start">
           <MovieList
             header="Top Review"
             Movies={moviesTopReview}
