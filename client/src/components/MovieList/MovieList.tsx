@@ -18,13 +18,13 @@ const MovieList = ({ header, Movies, description }: MovieListProps) => {
   return (
     <div className=" relative pb-15 flex justify-center">
       <div className="w-full">
-        <div className="flex items-center justify-start  xl:w-full  justify-center mx-auto">
+        <div className="flex items-center justify-start  ">
           <Icons.YellowPoint />
           <h1 className="text-xl w-45 text-baseText">{header}</h1>
         </div>
         <div className="ml-4 text-primaryGray">{description}</div>
 
-        <div className="flex flex-wrap gap-3 justify-center  xl:w-full">
+        <div className="flex flex-wrap gap-3 justify-center">
           {Movies.map((i) => (
             <MovieCrad
               movie={i}

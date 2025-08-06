@@ -12,30 +12,31 @@ const MovieCrad = ({
   setRateMovie,
 }: MovieCradProps) => {
   const navigate = useNavigate();
+
   return (
-    <div className="relative w-4xs h-77 bg-filterBG mt-10 rounded-xl cursor-pointer">
+    <div className="relative w-[12vw] h-[48vh] bg-filterBG mt-10 rounded-xl cursor-pointer">
       <img
         src={movie.Image[0].url}
-        className="w-38 h-55 rounded-xl mx-auto mt-2"
+        className="w-[10vw] h-[33vh] rounded-xl mx-auto mt-2"
         onClick={() => {
           navigate("/MoviePage", { state: { movie: movie } });
         }}
       />
-      <div className="mx-2 mt-1 text-lg"> {movie.movieName} </div>
-      <div className="flex mt-2 items-center space-x-11 mx-2">
+      <div className="mx-2 mt-1 text-md line-clamp-1"> {movie.movieName} </div>
+
+      <div className="flex mt-5 justify-between mx-2">
         <div className="flex items-center">
           <Icons.FullStar />
           <h1 className="text-xl ml-1">{movie.rating}</h1>
         </div>
         <div
-          className="flex cursor-pointer"
+          className="flex cursor-pointer items-center"
           onClick={() => {
             setIsRateActive(true);
             setRateMovie(movie);
           }}
         >
           <Icons.EmptyStar />
-
           <button className="ml-1 cursor-pointer">Rate</button>
         </div>
       </div>

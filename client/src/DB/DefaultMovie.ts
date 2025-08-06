@@ -46,7 +46,7 @@ export const defaultMovie: Movie[] = [
   {
     movieId: uuidv4(),
     movieName: "Mission Impossible",
-    plot: "aaaaaaaaaaaaaaa",
+    plot: "aaa aaaa aaa aaaaa",
     movieLength: "2 h 34 m",
     publicationDate: " 2.5.2025 ",
     rating: 8,
@@ -87,7 +87,7 @@ export const defaultMovie: Movie[] = [
   {
     movieId: uuidv4(),
     movieName: "free soli",
-    plot: "aaaaaaaaaaaaaaa",
+    plot: "aaa aaaaaa aa aaaa",
     genre: ["Comedy", "Action", "Horror"],
     review: [
       {

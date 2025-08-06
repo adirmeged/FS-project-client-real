@@ -3,6 +3,7 @@ import GenreBubble from "./GenreBubble";
 import Icons from "../Icons";
 import ReviewsPopup from "../ReviewWindows";
 import { useState } from "react";
+
 interface ContentSectionProps {
   title: string;
   content: React.ReactNode;
@@ -16,19 +17,25 @@ const ContentSection = ({ title, content }: ContentSectionProps) => {
     </div>
   );
 };
+
 interface MainSectionProps {
   movie: Movie;
 }
+
 const MainSection = ({ movie }: MainSectionProps) => {
   const [isRateActive, setIsRateActive] = useState(false);
   const movieYear = movie.publicationDate.split(".")[2];
   const maxRating = import.meta.env.VITE_RATE_MAX;
+
   const formatReviewCount = (reviews: Review[]) => {
     const count = reviews.length;
+
     if (count >= 1000) {
       const formattedCount = (count / 1000).toFixed(1);
+
       return `${parseFloat(formattedCount)}k`;
     }
+
     return count.toString();
   };
 

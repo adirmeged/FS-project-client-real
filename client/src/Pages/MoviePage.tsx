@@ -62,7 +62,7 @@ const MoviePage = () => {
         </div>
       </div>
 
-      <ul className="ml-10 mt-5 ">
+      <ul className="ml-10 mt-5">
         {links.map((link, index) => (
           <li key={index}>
             <a
