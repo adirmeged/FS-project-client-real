@@ -1,25 +1,24 @@
-import type { Movie } from "../Type";
 import { useState } from "react";
 import Icons from "./Icons";
 
 interface ReviewWindows {
-  movie: Movie;
+  movieName: string;
   setIsRateActive: (value: boolean) => void;
 }
-const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
+const ReviewsPopup = ({ movieName, setIsRateActive }: ReviewWindows) => {
   const [reviewText, setReviewText] = useState("");
   const fullStar: number = 3;
   const MAX_LEN: number = 500;
   const emptyStar: number = 7;
 
   return (
-    <div className=" bg-filterBG w-lg h-95 rounded-xl text-primaryWhite text-lg">
+    <div className=" bg-filterBG w-lg h-95 rounded-xl text-baseText text-lg">
       <div className="flex">
         <div onClick={() => setIsRateActive(false)} className="cursor-pointer">
           <Icons.Close />
         </div>
 
-        <h1 className="ml-8 mt-3">Review '{movie.movieName}'</h1>
+        <h1 className="ml-8 mt-3">Review '{movieName}'</h1>
       </div>
       <div className="flex ml-17 mt-3 gap-2 items-center">
         {[...Array(fullStar)].map((i) => (

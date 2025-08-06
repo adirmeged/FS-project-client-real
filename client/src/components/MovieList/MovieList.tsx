@@ -20,7 +20,7 @@ const MovieList = ({ header, Movies, description }: MovieListProps) => {
       <div className="w-full">
         <div className="flex items-center justify-start  xl:w-full  justify-center mx-auto">
           <Icons.YellowPoint />
-          <h1 className="text-xl w-45 text-primaryWhite">{header}</h1>
+          <h1 className="text-xl w-45 text-baseText">{header}</h1>
         </div>
         <div className="ml-4 text-primaryGray">{description}</div>
 
@@ -35,10 +35,11 @@ const MovieList = ({ header, Movies, description }: MovieListProps) => {
           ))}
         </div>
         <div className="absolute top-20 left-1/2 -translate-x-1/2 -translate-y-1/2 z-4">
-          {isRateActive ? (
-            <ReviewsPopup movie={rateMovie} setIsRateActive={setIsRateActive} />
-          ) : (
-            ""
+          {isRateActive && (
+            <ReviewsPopup
+              movieName={rateMovie.movieName}
+              setIsRateActive={setIsRateActive}
+            />
           )}
         </div>
       </div>

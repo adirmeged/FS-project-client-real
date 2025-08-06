@@ -14,7 +14,7 @@ const Icons = {
     return <TbPointFilled className="fill-yellow-300" />;
   },
   GrayPoint: () => {
-    return <TbPointFilled className="fill-primaryWhite size-2" />;
+    return <TbPointFilled className="fill-baseText size-2" />;
   },
 
   Search: () => {
@@ -24,7 +24,7 @@ const Icons = {
     return <IoClose className="ml-5 mt-5" />;
   },
   Proflie: () => {
-    return <FaUserCircle className="size-8 fill-primaryWhite" />;
+    return <FaUserCircle className="size-8 fill-baseText" />;
   },
 };
 export default Icons;

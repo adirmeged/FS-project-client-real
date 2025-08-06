@@ -1,5 +1,5 @@
 import Icons from "../components/Icons";
-import MoviePresentation from "../components/MoviePage/MainSection";
+import MainSection from "../components/MoviePage/MainSection";
 import ReviewBubble from "../components/MoviePage/ReviewBubble";
 import MovieList from "../components/MovieList/MovieList";
 import type { Movie } from "../Type";
@@ -13,6 +13,11 @@ const MoviePage = () => {
     ...defaultMovie,
     defaultMovie[0],
     defaultMovie[1],
+  ];
+  const links = [
+    { text: "Overview", target: "top" },
+    { text: "User reviews", target: "Review" },
+    { text: "More like this", target: "Movielist" },
   ];
 
   window.scrollTo(0, 0);
@@ -29,51 +34,47 @@ const MoviePage = () => {
   };
 
   return (
-      <div
-        id="top"
-        className="flex justify-center h-200 bg-linear-to-b from-homePageBG via-homePageBG"
-      >
-        <div className="md:w-4xl sm:w-xl  text-primaryGray mt-4 ">
-          <MoviePresentation movie={movie} />
+    <div
+      id="top"
+      className="flex justify-center h-200 bg-linear-to-b from-baseBG via-baseBG"
+    >
+      <div className="md:w-4xl sm:w-xl  text-primaryGray mt-4 ">
+        <MainSection movie={movie} />
 
-          <hr id="Review" className="my-5" />
+        <hr id="Review" className="my-5" />
 
-          <div className="flex text-primaryWhite text-xl items-center">
-            <Icons.YellowPoint />
-            {"User Reviews"}
-          </div>
-
-          <div className=" flex w-full gap-4 my-5">
-            <ReviewBubble review={movie.review[0]} />
-            <ReviewBubble review={movie.review[0]} />
-          </div>
-
-          <div id="MovieList">
-            <MovieList header="More like this" Movies={moviesMore} description="more movie with the same genre" />
-          </div>
+        <div className="flex text-baseText text-xl items-center">
+          <Icons.YellowPoint />
+          {"User Reviews"}
         </div>
 
-        <ul className="ml-10">
-          <li
-            onClick={() => scroll("top")}
-            className="cursor-pointer mt-10 h hover:text-yellow-300"
-          >
-            Overiew
-          </li>
-          <li
-            onClick={() => scroll("Review")}
-            className="cursor-pointer mt-3 mb-3 hover:text-yellow-300"
-          >
-            User reviews
-          </li>
-          <li
-            onClick={() => scroll("MovieList")}
-            className="cursor-pointer hover:text-yellow-300"
-          >
-            More like this
-          </li>
-        </ul>
+        <div className=" flex w-full gap-4 my-5">
+          <ReviewBubble review={movie.review[0]} />
+          <ReviewBubble review={movie.review[0]} />
+        </div>
+
+        <div id="Movielist">
+          <MovieList
+            header="More like this"
+            Movies={moviesMore}
+            description="more movie with the same genre"
+          />
+        </div>
       </div>
+
+      <ul className="ml-10 mt-5 ">
+        {links.map((link, index) => (
+          <li key={index}>
+            <a
+              onClick={() => scroll(link.target)}
+              className="cursor-pointer hover:text-yellow-300"
+            >
+              {link.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

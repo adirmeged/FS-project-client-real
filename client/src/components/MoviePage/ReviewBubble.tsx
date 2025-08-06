@@ -5,12 +5,14 @@ interface ReviewBubbleProps {
   review: Review;
 }
 const ReviewBubble = ({ review }: ReviewBubbleProps) => {
+  const maxRating = import.meta.env.VITE_RATE_MAX;
+
   return (
-    <div className="bg-filterBG h-75  w-md px-3 py-2 text-primaryWhite rounded-xl">
+    <div className="bg-filterBG h-75  w-md px-3 py-2 text-baseText rounded-xl">
       <div className="flex items-center">
         <Icons.FullStar />
         <div className="text-yellow-300 ml-3">{review.rating}</div>
-        {"/10"}
+        {`/${maxRating}`}
       </div>
 
       <div className="mt-2 text-lg">{review.Title}</div>
