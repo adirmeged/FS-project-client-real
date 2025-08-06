@@ -3,6 +3,19 @@ import GenreBubble from "./GenreBubble";
 import Icons from "../Icons";
 import ReviewsPopup from "../ReviewWindows";
 import { useState } from "react";
+interface ContentSectionProps {
+  title: string;
+  content: React.ReactNode;
+}
+
+const ContentSection = ({ title, content }: ContentSectionProps) => {
+  return (
+    <div className="flex items-center gap-2 mt-4">
+      <div className="text-md mr-10">{title}</div>
+      <div className="text-xs text-baseText flex gap-2">{content}</div>
+    </div>
+  );
+};
 interface MainSectionProps {
   movie: Movie;
 }
@@ -52,17 +65,14 @@ const MainSection = ({ movie }: MainSectionProps) => {
         />
       </div>
 
-      <div className="flex items-center gap-2 mt-4">
-        <div className="text-md mr-10">{"Genre"}</div>
-        {movie.genre.map((i) => (
+      <ContentSection
+        title="Genre"
+        content={movie.genre.map((i) => (
           <GenreBubble genre={i} key={i} />
         ))}
-      </div>
+      />
 
-      <div className="flex items-center gap-2 mt-4">
-        <div className="text-md mr-15">{"Plot"}</div>
-        <div className="text-xs text-baseText">{movie.plot}</div>
-      </div>
+      <ContentSection title="Plot" content={movie.plot} />
 
       <div className="absolute top-70 left-1/2 -translate-x-1/2 -translate-y-1/2 z-4">
         {isRateActive && (
