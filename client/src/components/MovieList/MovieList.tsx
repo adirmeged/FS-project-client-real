@@ -7,9 +7,10 @@ import MovieCrad from "./MovieCrad";
 
 interface MovieListProps {
   header: string;
-  numMovieShow: number;
+  description: string;
+  Movies: Movie[];
 }
-const MovieList = ({ header, numMovieShow }: MovieListProps) => {
+const MovieList = ({ header, Movies, description }: MovieListProps) => {
   const movies: Movie[] = defaultMovie;
   const [isRateActive, setIsRateActive] = useState(false);
   const [rateMovie, setRateMovie] = useState(movies[0]);
@@ -21,13 +22,15 @@ const MovieList = ({ header, numMovieShow }: MovieListProps) => {
           <Icons.YellowPoint />
           <h1 className="text-xl w-45 text-primaryWhite">{header}</h1>
         </div>
+        <div className="ml-4 text-primaryGray">{description}</div>
+
         <div className="flex flex-wrap gap-3 justify-center  xl:w-full">
-          {[...Array(numMovieShow).keys()].map((i) => (
+          {Movies.map((i) => (
             <MovieCrad
-              movie={movies[i % 3]}
+              movie={i}
               setIsRateActive={setIsRateActive}
               setRateMovie={setRateMovie}
-              key={i}
+              key={i.movieId}
             />
           ))}
         </div>

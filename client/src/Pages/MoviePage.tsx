@@ -1,16 +1,20 @@
 import Icons from "../components/Icons";
 import MoviePresentation from "../components/MoviePage/MainSection";
 import ReviewBubble from "../components/MoviePage/ReviewBubble";
-import Navbar from "../components/NavBar/Navbar";
 import MovieList from "../components/MovieList/MovieList";
 import type { Movie } from "../Type";
 import { useLocation } from "react-router-dom";
-
-
+import { defaultMovie } from "../DB/DefaultMovie";
 
 const MoviePage = () => {
   const location = useLocation();
   const movie: Movie = location.state.movie;
+  const moviesMore: Movie[] = [
+    ...defaultMovie,
+    defaultMovie[0],
+    defaultMovie[1],
+  ];
+
   window.scrollTo(0, 0);
 
   const scroll = (target: string) => {
@@ -23,11 +27,12 @@ const MoviePage = () => {
       }
     }
   };
-  
+
   return (
-    <div id="top"  >
-      <Navbar />
-      <div className="flex justify-center h-200 bg-linear-to-b from-homePageBG via-homePageBG">
+      <div
+        id="top"
+        className="flex justify-center h-200 bg-linear-to-b from-homePageBG via-homePageBG"
+      >
         <div className="md:w-4xl sm:w-xl  text-primaryGray mt-4 ">
           <MoviePresentation movie={movie} />
 
@@ -44,7 +49,7 @@ const MoviePage = () => {
           </div>
 
           <div id="MovieList">
-            <MovieList header="More like this" numMovieShow={5} />
+            <MovieList header="More like this" Movies={moviesMore} description="more movie with the same genre" />
           </div>
         </div>
 
@@ -69,7 +74,6 @@ const MoviePage = () => {
           </li>
         </ul>
       </div>
-    </div>
   );
 };
 

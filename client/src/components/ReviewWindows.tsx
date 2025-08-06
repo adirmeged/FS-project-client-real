@@ -15,7 +15,7 @@ const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
   return (
     <div className=" bg-filterBG w-lg h-95 rounded-xl text-primaryWhite text-lg">
       <div className="flex">
-        <div onClick={() => setIsRateActive(false)}>
+        <div onClick={() => setIsRateActive(false)} className="cursor-pointer">
           <Icons.Close />
         </div>
 
@@ -39,7 +39,7 @@ const ReviewsPopup = ({ movie, setIsRateActive }: ReviewWindows) => {
       <div className="text-xs ml-100 text-primaryGray">
         {reviewText.length}/{MAX_LEN}
       </div>
-      <button className="absolute bottom-5 right-15 bg-yellow-400 w-30 rounded-xl text-black text-xs p-2">
+      <button className="absolute bottom-5 right-15 bg-yellow-400 w-30 rounded-xl text-black text-xs p-2 cursor-pointer">
         Add Review +
       </button>
     </div>
