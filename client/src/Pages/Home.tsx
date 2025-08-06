@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div className="bg-linear-to-b from-baseBG via-baseBG">
-      <div className="mx-30">
+      <div className="flex flex-col mx-30">
         <div className="flex py-5 h-[110vh] ">
           <div className="relative flex">
             <div className="relative">
@@ -33,8 +33,8 @@ const Home = () => {
                 {movies[0].plot}
               </div>
             </div>
-            <div className="px-10 py-5 ">
-              <div className="flex items-center ">
+            <div className="px-10 py- ">
+              <div className="flex items-center">
                 <Icons.YellowPoint />
                 <h1>Featured Choices</h1>
               </div>

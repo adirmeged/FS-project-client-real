@@ -18,7 +18,7 @@ const MovieList = ({ header, Movies, description }: MovieListProps) => {
   return (
     <div className="relative pb-15 flex">
       <div className="w-full">
-        <div className="flex items-center justify-start  ">
+        <div className="flex items-center justify-start">
           <Icons.YellowPoint />
           <h1 className="text-xl w-45 text-baseText">{header}</h1>
         </div>
