@@ -37,6 +37,7 @@ const Home = () => {
   if (movies.length == 0 || !lastMovie) {
     return <div> wait </div>;
   }
+  console.error("ERROR", topReviewMovies);
 
   return (
     <div className="bg-linear-to-b from-baseBG via-baseBG">

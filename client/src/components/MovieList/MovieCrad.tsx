@@ -19,9 +19,7 @@ const MovieCrad = ({
         src={movie.Image[0].url}
         className="w-[10vw] h-[33vh] rounded-xl mx-auto mt-2"
         onClick={() => {
-          navigate(`/MoviePage/${movie.movieId}`, {
-            state: { movie: movie },
-          });
+          navigate(`/MoviePage/${movie.movieId}`);
         }}
       />
       <div className="mx-2 mt-1 text-md line-clamp-1"> {movie.movieName} </div>

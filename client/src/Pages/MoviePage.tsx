@@ -34,7 +34,7 @@ const MoviePage = () => {
       }
     };
     fetchAndSetMovies();
-  }, []);
+  }, [movieId]);
 
   if (!movie) return <div>Loading...</div>;
   if (!movies) return <div>Loading...</div>;
