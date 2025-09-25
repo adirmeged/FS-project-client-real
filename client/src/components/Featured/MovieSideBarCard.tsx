@@ -12,7 +12,9 @@ const MovieSideBarCard = ({ movie }: MovieSideBarProps) => {
     <div
       className="relative w-[18vw] h-[20vh] mt-5 ml-3 cursor-pointer"
       onClick={() => {
-        navigate("/MoviePage", { state: { movie: movie } });
+        navigate(`/MoviePage/${movie.movieId}`, {
+          state: { movie: movie },
+        });
       }}
     >
       <img

@@ -1,5 +1,4 @@
 import type { Movie } from "../../Type";
-import { defaultMovie } from "../../DB/DefaultMovie";
 import { useState } from "react";
 import ReviewsPopup from "../ReviewWindows";
 import Icons from "../Icons";
@@ -11,9 +10,8 @@ interface MovieListProps {
   Movies: Movie[];
 }
 const MovieList = ({ header, Movies, description }: MovieListProps) => {
-  const movies: Movie[] = defaultMovie;
   const [isRateActive, setIsRateActive] = useState(false);
-  const [rateMovie, setRateMovie] = useState(movies[0]);
+  const [rateMovie, setRateMovie] = useState(Movies[0]);
 
   return (
     <div className="relative pb-15 flex">

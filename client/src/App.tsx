@@ -6,10 +6,10 @@ import Navbar from "./components/NavBar/Navbar";
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/MoviePage" element={<MoviePage />} />
+        <Route path="/MoviePage/:movieId" element={<MoviePage />} />
       </Routes>
     </div>
   );

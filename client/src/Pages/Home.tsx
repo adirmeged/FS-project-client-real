@@ -2,12 +2,41 @@ import { useNavigate } from "react-router-dom";
 import MovieSideBarCard from "../components/Featured/MovieSideBarCard";
 import Icons from "../components/Icons";
 import MovieList from "../components/MovieList/MovieList";
-import { defaultMovie } from "../DB/DefaultMovie";
 import type { Movie } from "../Type";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const Home = () => {
   const navigate = useNavigate();
-  const movies: Movie[] = defaultMovie;
-  const moviesTopReview: Movie[] = [...defaultMovie, ...defaultMovie];
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [topReviewMovies, setTopReview] = useState<Movie[]>([]);
+  const [lastMovie, setLastMovie] = useState<Movie>(movies[0]);
+
+  useEffect(() => {
+    const fetchAndSetMovies = async () => {
+      try {
+        axios.get<Movie[]>("http://localhost:3000/movies").then((response) => {
+          setMovies(response.data);
+        });
+        axios
+          .get<Movie>("http://localhost:3000/movies/lastMovie")
+          .then((response) => {
+            setLastMovie(response.data);
+          });
+        axios
+          .get<Movie[]>("http://localhost:3000/movies/topReview")
+          .then((response) => {
+            setTopReview(response.data);
+          });
+      } catch (error) {
+        console.error("ERROR", error);
+      }
+    };
+    fetchAndSetMovies();
+  }, []);
+
+  if (movies.length == 0 || !lastMovie) {
+    return <div> wait </div>;
+  }
 
   return (
     <div className="bg-linear-to-b from-baseBG via-baseBG">
@@ -16,21 +45,25 @@ const Home = () => {
           <div className="relative flex">
             <div className="relative">
               <img
-                src={movies[0].Image[1].url}
+                src={lastMovie.Image[1].url}
                 className="w-[90vw] h-[80vh]  rounded-xl brightness-65 cursor-pointer"
                 onClick={() => {
-                  navigate("/MoviePage", { state: { movie: movies[0] } });
+                  navigate(`/MoviePage/${lastMovie.movieId}`, {
+                    state: { movie: lastMovie },
+                  });
                 }}
               />
               <img
-                src={movies[0].Image[0].url}
+                src={lastMovie.Image[0].url}
                 className="absolute top-[40vh] left-5 w-[15vw] h-[50vh] rounded-xl cursor-pointer"
                 onClick={() => {
-                  navigate("/MoviePage", { state: { movie: movies[0] } });
+                  navigate(`/MoviePage/${lastMovie.movieId}`, {
+                    state: { movie: lastMovie },
+                  });
                 }}
               />
               <div className="absolute rounded-xl top-[80vh] left-[20vw] text-3xl w-[25vw]">
-                {movies[0].plot}
+                {lastMovie.plot}
               </div>
             </div>
             <div className="px-10 py- ">
@@ -42,12 +75,12 @@ const Home = () => {
                 <MovieSideBarCard movie={movie} />
               ))}
             </div>
-          </div>      
+          </div>
         </div>
         <div className="flex justify-start">
           <MovieList
             header="Top Review"
-            Movies={moviesTopReview}
+            Movies={[...topReviewMovies, ...topReviewMovies]}
             description="The highest rated movies"
           />
         </div>

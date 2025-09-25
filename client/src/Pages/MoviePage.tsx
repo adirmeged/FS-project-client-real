@@ -3,25 +3,43 @@ import MainSection from "../components/MoviePage/MainSection";
 import ReviewBubble from "../components/MoviePage/ReviewBubble";
 import MovieList from "../components/MovieList/MovieList";
 import type { Movie } from "../Type";
-import { useLocation } from "react-router-dom";
-import { defaultMovie } from "../DB/DefaultMovie";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const MoviePage = () => {
-  const location = useLocation();
-  const movie: Movie = location.state.movie;
-  const moviesMore: Movie[] = [
-    ...defaultMovie,
-    defaultMovie[0],
-    defaultMovie[1],
-  ];
   const links = [
     { text: "Overview", target: "top" },
     { text: "User reviews", target: "Review" },
     { text: "More like this", target: "Movielist" },
   ];
+  const [movie, setMovie] = useState<Movie>();
+  const [movies, setMovies] = useState<Movie[]>();
 
-  window.scrollTo(0, 0);
+  const { movieId } = useParams<{ movieId: string }>();
+  useEffect(() => {
+    const fetchAndSetMovies = async () => {
+      try {
+        window.scrollTo(0, 0);
+        axios
+          .get<Movie>(`http://localhost:3000/movies/${movieId}`)
+          .then((response) => {
+            setMovie(response.data);
+          });
+        axios.get<Movie[]>(`http://localhost:3000/movies`).then((response) => {
+          setMovies(response.data);
+        });
+      } catch (error) {
+        console.error("ERROR", error);
+      }
+    };
+    fetchAndSetMovies();
+  }, []);
 
+  if (!movie) return <div>Loading...</div>;
+  if (!movies) return <div>Loading...</div>;
+
+  const moviesMore: Movie[] = [...movies, movies[0], movies[1]];
   const scroll = (target: string) => {
     const targetElement = document.getElementById(target);
     if (targetElement) {
